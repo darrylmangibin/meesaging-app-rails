@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   post "message", to: "messages#create"
 
+  get "/signup", to: "users#new", :as => :users
+  post "/signup", to: "users#create"
+
+  resources :samples
+
   mount ActionCable.server, at: "/cable"
 end
